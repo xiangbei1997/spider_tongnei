@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03ae48b6-34dd-43aa-9a8e-df9d3af35c5f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2470">
+              <caret line="131" column="70" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
+              <folding>
+                <element signature="e#3137#7521#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zizhiname/text.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zizhiname/zzz.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ZizhinamePipeline</find>
+      <find>DOWNLOAD</find>
+      <find>新疆明诚市政工程有限公司</find>
+      <find>新疆金方正科技有限公司</find>
+      <find>major</find>
+      <find>print</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/xinliang.text" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/xinliang.txt" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/sas.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/pipelines.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/items.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/perfect.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_detailed.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/all_xinliang.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/settings.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_all.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/middlewares.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/zixin.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/my_text.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/company_ok.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_ok.py" />
+        <option value="$PROJECT_DIR$/zizhiname/text.py" />
+        <option value="$PROJECT_DIR$/zizhiname/zzz.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="32" />
+    <option name="y" value="35" />
+    <option name="width" value="1340" />
+    <option name="height" value="690" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="scrapy_zizhiname" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scrapy_zizhiname" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scrapy_zizhiname" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scrapy_zizhiname" type="462c0819:PsiDirectoryNode" />
+              <item name="zizhiname" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scrapy_zizhiname" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scrapy_zizhiname" type="462c0819:PsiDirectoryNode" />
+              <item name="zizhiname" type="462c0819:PsiDirectoryNode" />
+              <item name="zizhiname" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.zzz">
+    <configuration name="all_xinliang" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="scrapy_zizhiname" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zizhiname/zizhiname/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/all_xinliang.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_text" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="scrapy_zizhiname" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zizhiname/zizhiname/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/my_text.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="person_ok" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="scrapy_zizhiname" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zizhiname/zizhiname/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_ok.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="text" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="scrapy_zizhiname" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zizhiname" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zizhiname/text.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="zzz" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="scrapy_zizhiname" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zizhiname" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zizhiname/zzz.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.zzz" />
+        <item itemvalue="Python.text" />
+        <item itemvalue="Python.my_text" />
+        <item itemvalue="Python.person_ok" />
+        <item itemvalue="Python.all_xinliang" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03ae48b6-34dd-43aa-9a8e-df9d3af35c5f" name="Default Changelist" comment="" />
+      <created>1552292136958</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552292136958</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49595687" visible="true" weight="0.15171899" />
+      <window_info id="Structure" order="1" sideWeight="0.5040431" side_tool="true" weight="0.15620328" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5433715" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.36497545" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/xinliang.text" />
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/sas.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/http/request/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/core/engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/spiderloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/core/downloader/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="35" column="58" lean-forward="true" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/perfect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/all_xinliang.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_detailed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="98" column="75" lean-forward="true" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/parsel/selector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/xinliang.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding>
+            <element signature="e#169#195#0" expanded="true" />
+            <element signature="e#327#1989#0" />
+            <element signature="e#2041#3684#0" />
+            <element signature="e#3741#4130#0" />
+            <element signature="e#4152#4160#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/person_ok.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#249#885#0" />
+            <element signature="e#936#1192#0" />
+            <element signature="e#1273#1513#0" />
+            <element signature="e#1572#3031#0" />
+            <element signature="e#3095#8529#0" />
+            <element signature="e#8591#9821#0" />
+            <element signature="e#9878#10697#0" />
+            <element signature="e#10755#11577#0" />
+            <element signature="e#11640#12447#0" />
+            <element signature="e#12511#13856#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/my_text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#155#4489#0" />
+            <element signature="e#1101#4433#0" />
+            <element signature="e#1459#3949#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/company_ok.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#252#670#0" />
+            <element signature="e#721#976#0" />
+            <element signature="e#1047#3995#0" />
+            <element signature="e#1791#3288#0" />
+            <element signature="e#4050#4869#0" />
+            <element signature="e#4925#5744#0" />
+            <element signature="e#5806#6687#0" />
+            <element signature="e#6753#7729#0" />
+            <element signature="e#7780#7823#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/spiders/zixin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zizhiname/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2470">
+          <caret line="131" column="70" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
+          <folding>
+            <element signature="e#3137#7521#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zizhiname/zzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
