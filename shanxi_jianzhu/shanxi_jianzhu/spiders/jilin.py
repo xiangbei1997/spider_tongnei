@@ -33,11 +33,11 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             url = company_name.split('..')[1]
             print(url)
             print(self.bigurl + url)
-            yield scrapy.Request(url=self.bigurl + url, callback=self.company_information)
+            yield scrapy.Request(url=self.bigurl + url, callback=self.company_information,dont_filter=True)
         self.index = self.index + 1
         print(self.index != 314, 'zzzzzzzzzzzzzzzzzzzzzzz')
         if self.index != 314:
-            yield scrapy.Request(url='http://cx.jlsjsxxw.com/handle/NewHandler.ashx?method=SnCorpData&CorpName=&QualiType=&TradeID=&BoundID=&LevelID=&CityNum=&nPageIndex=%s&nPageCount=0&nPageRowsCount=0&nPageSize=%s&' % (self.index, 20), callback=self.parse)
+            yield scrapy.Request(url='http://cx.jlsjsxxw.com/handle/NewHandler.ashx?method=SnCorpData&CorpName=&QualiType=&TradeID=&BoundID=&LevelID=&CityNum=&nPageIndex=%s&nPageCount=0&nPageRowsCount=0&nPageSize=%s&' % (self.index, 20), callback=self.parse,dont_filter=True)
     def company_information(self, response):
         company_name = Selector(response=response).xpath('//td[@class="name_level3"]/text()').extract_first()
         number = Selector(response=response).xpath('//td[@id="LicenseNum"]/text()').extract_first()
@@ -72,16 +72,21 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             headers={'Content-Type': 'application/json'},
             body=json.dumps(self.data),
             callback=self.zz,
-            meta={'company_name': company_name}
+            meta={'company_name': company_name, 'data': self.data}
         )
 
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
-        self.r.sadd('all_company_name')
+        not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
+        self.r.sadd('all_company_name', not_search_company_name)
+        print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
-            not_search_company_name = response.meta['company_name']
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
-            print(response.meta['company_name'], '找到的企业')
+            print(not_search_company_name, '找到的企业')

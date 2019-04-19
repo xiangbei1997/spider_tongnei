@@ -25,6 +25,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         self.data['companyArea'] = '河南省'
         self.data['contactMan'] = ''
         self.data['contactPhone'] = ''
+        self.data['contactAddress'] = ''
         self.data['token'] = self.token
         self.bigurl = 'http://hngcjs.hnjs.gov.cn'
         yield scrapy.Request(url=self.url, callback=self.parse)
@@ -45,7 +46,6 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         print(len(tr))
         for t in tr:
             company_url = t.extract()
-            # print(self.bigurl + company_url)
             yield scrapy.Request(url=self.bigurl + company_url, callback=self.company_information)
         if not self.index == 1035:
             yield scrapy.FormRequest(url='http://hngcjs.hnjs.gov.cn/SiKuWeb/QiyeList.aspx?type=qyxx&val=',
@@ -55,10 +55,14 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
         not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
         self.r.sadd('all_company_name', not_search_company_name)
         print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
@@ -68,15 +72,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         company_name = Selector(response=response).xpath('//span[@id="ctl00_ContentPlaceHolder1_FormView1_Label10"]/text()').extract_first()
         number = Selector(response=response).xpath('//td[@class="inquiry_intitleb"]')[5]\
             .xpath('./span/text()').extract_first()
-        address = Selector(response=response).xpath('//td[@width="279"]')[1] \
-            .xpath('./span/text()').extract_first()
         company_name = company_name.split()[0]
-        if address != None:
-            address = address.split()[0]
-            print(address)
-            self.data['contactAddress'] = address
-        else:
-            self.data['contactAddress'] = ''
         self.data['companyName'] = company_name
         if number != None:
             number = number.split()[0]
@@ -95,5 +91,5 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             headers={'Content-Type': 'application/json'},
             body=json.dumps(self.data),
             callback=self.zz,
-            meta={'company_name': company_name}
+            meta={'company_name': company_name, 'data': self.data}
         )

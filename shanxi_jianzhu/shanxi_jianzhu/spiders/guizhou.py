@@ -69,7 +69,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             )
 
         self.index = self.index + 1
-        if not self.index == 2489:
+        if not self.index == 2492:
             yield scrapy.FormRequest(url=self.url,
                                      formdata=post_forama_data,
                                      callback=self.parse, dont_filter=True)
@@ -77,10 +77,14 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
         not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
         self.r.sadd('all_company_name', not_search_company_name)
         print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:

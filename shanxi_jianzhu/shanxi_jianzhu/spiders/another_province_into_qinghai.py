@@ -46,10 +46,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
                                      formdata=send_data,
                                      callback=self.parse)
 
-    # def type_name(self, company_url):
-    #     if company_url.startswith('http://jzjg.gzjs.gov.cn:8088/gzzhxt/SysWebCenter/WebQYSB/Web_GSDWInfo_New.aspx?'):
-    #         scrapy.FormRequest(url=company_url, callback=self.type_name)
-    #     print(company_url.url)
+
 
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']

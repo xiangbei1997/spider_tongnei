@@ -17,7 +17,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         zz  = {}
         zz['i'] = '1'
         zz['c'] = '1'
-        zz['p'] = '1140'
+        zz['p'] = '1150'
         zz['s'] = ' and  t1.FId=t3.FBaseInfoId and t1.FIsDeleted=0  and t3.FIsDeleted=0 and t1.FState=2 '
         no_zz = random.random()
         no_zz = str(no_zz)
@@ -47,14 +47,21 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
                 headers={'Content-Type': 'application/json'},
                 body=json.dumps(self.data),
                 callback=self.zz,
-                meta={'company_name': company_name}
+                meta={'company_name': company_name, 'data': self.data}
             )
+
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
+        not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
+        self.r.sadd('all_company_name', not_search_company_name)
+        print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
-            not_search_company_name = response.meta['company_name']
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
-            print(response.meta['company_name'], '找到的企业')
+            print(not_search_company_name, '找到的企业')

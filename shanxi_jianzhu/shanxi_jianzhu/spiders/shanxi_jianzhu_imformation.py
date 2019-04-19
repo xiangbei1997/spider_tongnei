@@ -36,12 +36,12 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             list_z = re.findall(s, u)
             print(list_z[0][1], '----', list_z[0][0], '---', list_z[0][2])
             company_url = 'http://jzscyth.shaanxi.gov.cn:7001/PDR/network/Enterprise/Informations/view?enid=%s&name=%s&org_code=%s&type=' %(list_z[0][1], list_z[0][0], list_z[0][2])
-            yield Request(url=company_url, callback=self.company_information)
+            yield Request(url=company_url, callback=self.company_information, dont_filter=True)
         self.index = self.index + 1
         if self.index != 958:
                 url = 'http://jzscyth.shaanxi.gov.cn:7001/PDR/network/informationSearch/informationSearchList?' \
                           'pid1=610000&pageNumber=%s&libraryName=enterpriseLibrary' % self.index
-                yield Request(url=url, callback=self.parse)
+                yield Request(url=url, callback=self.parse,dont_filter=True)
 
     def company_information(self, response):
         company_name = Selector(response=response).xpath('//td[@colspan="3"]/text()').extract_first()
@@ -65,15 +65,21 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             headers={'Content-Type': 'application/json'},
             body=json.dumps(self.data),
             callback=self.zz,
-            meta={'company_name': company_name}
+            meta={'company_name': company_name, 'data': self.data}
         )
 
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
+        not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
+        self.r.sadd('all_company_name', not_search_company_name)
+        print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
-            not_search_company_name = response.meta['company_name']
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
-            print(response.meta['company_name'], '找到的企业')
+            print(not_search_company_name, '找到的企业')

@@ -6,6 +6,7 @@ from scrapy.http import Request
 import time
 import random
 import json
+import re
 
 
 
@@ -17,11 +18,11 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         self.r = redis.Redis(connection_pool=pool)
         self.url = 'http://220.160.52.164:96/ConstructionInfoPublish/Pages/CompanyQuery.aspx?bussinessSystemID=31'
         self.index = 1
-        self.x = 1
+        self.x = True
         self.flag = True
         self.token = 'LnHRF8R1jmqOLFnnK048DcokeilQRDS2'
         self.bigurl = 'http://220.160.52.164:96/ConstructionInfoPublish/Pages/'
-        yield scrapy.Request(url=self.url, callback=self.parse)
+        yield scrapy.Request(url=self.url, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
         post_forama_data = {}
@@ -38,22 +39,29 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         for t in tr:
             tip = t.extract()
             print(self.bigurl+tip)
-            yield scrapy.Request(url=self.bigurl+tip, callback=self.company_information)
+            yield scrapy.Request(url=self.bigurl+tip, callback=self.company_information,
+                                 dont_filter=True)
 
         #                )
+
         self.index = self.index + 1
-        if not self.index == 429:
+        if not self.index == 430:
             yield scrapy.FormRequest(url=self.url,
                                      formdata=post_forama_data,
-                                     callback=self.parse)
+                                     callback=self.parse,
+                                     dont_filter=True)
 
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
         not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
         self.r.sadd('all_company_name', not_search_company_name)
         print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
@@ -91,7 +99,8 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             headers={'Content-Type': 'application/json'},
             body=json.dumps(data),
             callback=self.zz,
-            meta={'company_name': company_name}
+            meta={'company_name': company_name, 'data': data},
+            dont_filter=True
         )
         #
 

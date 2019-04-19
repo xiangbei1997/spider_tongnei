@@ -42,7 +42,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
 
         #                )
         self.index = self.index + 1
-        if not self.index == 1423:
+        if not self.index == 1430:
             yield scrapy.FormRequest(url=self.url,
                                      formdata=post_forama_data,
                                      callback=self.parse, dont_filter=True)
@@ -51,15 +51,12 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         data = {}
         company_name = td[0].xpath('./td/text()').extract_first()
         company_name = company_name.split()[0]
-        print(company_name, 'zzzzzzzzzzzzzzz')
         licenseNum = td[3].xpath('./td[3]/text()').extract_first()
         if licenseNum == None:
             data['licenseNum'] = ''
         else:
             licenseNum = licenseNum.split()
-            print(licenseNum, 'BBBBBBBBBBBBBBBBBBBB')
             if licenseNum != []:
-                print(licenseNum, 'AAAAAAAAAAAAAAAAAA')
                 licenseNum = licenseNum[0]
                 if len(licenseNum) == 18:
                     data['licenseNum'] = licenseNum
@@ -82,21 +79,24 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             headers={'Content-Type': 'application/json'},
             body=json.dumps(data),
             callback=self.zz,
-            meta={'company_name': company_name}
+            meta={'company_name': company_name, 'data': data},
+            dont_filter=True
         )
 
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
         not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
         self.r.sadd('all_company_name', not_search_company_name)
         print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
             print(not_search_company_name, '找到的企业')
-
-
 
 

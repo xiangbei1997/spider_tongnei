@@ -16,6 +16,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         self.token = 'LnHRF8R1jmqOLFnnK048DcokeilQRDS2'
         self.flag = True
         self.data = {}
+        self.index = 1
         self.data['licenseNum'] = ''
         self.data['contactMan'] = ''
         self.data['area'] = '陕西省'
@@ -41,27 +42,29 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
                 headers={'Content-Type': 'application/json'},
                 body=json.dumps(self.data),
                 callback=self.zz,
-                meta={'company_name': company_name}
+                meta={'company_name': company_name, 'data': self.data}
             )
             # self.r.sadd('another_into_shanxi_make', company_name)
-        if self.flag == True:
-            for i in range(1, 178):
-                if i == 177:
-                    self.flag = False
-                i = str(i)
-                print('第多少页%s' % i)
+        self.index =self.index + 1
+        if self.index != 179:
                 yield scrapy.FormRequest(url=self.url, callback=self.parse, formdata={'__VIEWSTATE':__VIEWSTATE,
                                                                                               '__VIEWSTATEGENERATOR': __VIEWSTATEGENERATOR,
                                                                                                '__EVENTVALIDATION': __EVENTVALIDATION,
                                                                                                'Pager1': ' Go',
-                                                                                             'Pager1_input':i},
+                                                                                             'Pager1_input':str(self.index)},
                                          )
-    def zz(self,response):
+    def zz(self, response):
         not_company_code = json.loads(response.text)['code']
+        not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
+        self.r.sadd('all_company_name', not_search_company_name)
+        print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
-            not_search_company_name = response.meta['company_name']
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:
-            print(response.meta['company_name'], '找到的企业')
+            print(not_search_company_name, '找到的企业')

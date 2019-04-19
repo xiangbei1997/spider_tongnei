@@ -39,7 +39,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
                   headers={'Content-Type': 'application/json'},
                   body=json.dumps(self.data),
                   callback=self.zz,
-                  meta={'company_name': company_name}
+                  meta={'company_name': company_name, 'data': self.data}
                           )
                 # self.r.sadd('hebei', company_name)
         if self.flag:
@@ -48,13 +48,19 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
                     self.flag = False
                 url = 'http://zfcxjst.hebei.gov.cn/was5/web/search?page=%s&channelid=247697&perpage=100&outlinepage=10'% p
                 yield scrapy.Request(url=url, callback=self.parse)
-    def zz(self,response):
+
+    def zz(self, response):
         not_company_code = json.loads(response.text)['code']
+        not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
+        self.r.sadd('all_company_name', not_search_company_name)
+        print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
-            not_search_company_name = response.meta['company_name']
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
-            # print(z)
             print(not_search_company_name, '没找到的企业')
         else:
-            print(response.meta['company_name'], '找到的企业')
+            print(not_search_company_name, '找到的企业')

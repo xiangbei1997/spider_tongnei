@@ -19,6 +19,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         self.flag = True
         self.token = 'LnHRF8R1jmqOLFnnK048DcokeilQRDS2'
         self.data = {}
+        self.index = 1
         self.data['licenseNum'] = ''
         self.data['contactMan'] = ''
         self.data['area'] = '新疆维吾尔自治区'
@@ -45,12 +46,11 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         send_data['$total'] = '3748'
         send_data['$pgsz'] = '15'
         send_data['$reload'] = '0'
-        if self.flag:
-            for p in range(2, 251):
-                if p == 250:
-                    self.flag = False
-                send_data['$pg'] = str(p)
-                yield scrapy.FormRequest(url=self.url, formdata=send_data, callback=self.parse)
+        send_data['comp_zone'] = 'XX'
+        self.index = self.index + 1
+        if self.index != 270:
+            send_data['$pg'] = str(self.index)
+            yield scrapy.FormRequest(url=self.url, formdata=send_data, callback=self.parse)
 
     def company_information(self, response):
         company_name = Selector(response=response).xpath('//span[@class="user-name"]/text()').extract_first()
@@ -74,16 +74,20 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             headers={'Content-Type': 'application/json'},
             body=json.dumps(self.data),
             callback=self.zz,
-            meta={'company_name': company_name}
+            meta={'company_name': company_name,'data':self.data}
         )
 
     def zz(self, response):
         not_company_code = json.loads(response.text)['code']
         not_search_company_name = response.meta['company_name']
+        zz_data = response.meta['data']
         self.r.sadd('all_company_name', not_search_company_name)
         print(response.text)
+        data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
             self.r.sadd('title_name1', not_search_company_name)
+            self.r.sadd('title_102', data)
             self.r.sadd('title_name3', not_search_company_name)
             print(not_search_company_name, '没找到的企业')
         else:

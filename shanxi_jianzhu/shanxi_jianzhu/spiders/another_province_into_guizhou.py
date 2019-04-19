@@ -61,7 +61,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
                                  dont_filter=True
                                  )
         self.index = self.index + 1
-        if not self.index == 769:
+        if not self.index == 770:
             post_forama_data['ctl00$ContentMain$HidIndexPage'] = str(self.index)
             yield scrapy.FormRequest(url=self.url,
                                      formdata=post_forama_data,
@@ -118,6 +118,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         self.r.sadd('all_company_name', not_search_company_name)
         print(response.text)
         data = json.dumps(zz_data, ensure_ascii=False)
+        print(response.meta['data'], 'aaaaaaaaaaaaaaaaaa')
         if not_company_code == -102:
             self.r.sadd('title_name1', not_search_company_name)
             self.r.sadd('title_102', data)

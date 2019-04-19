@@ -36,8 +36,8 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
             print(re_a)
             yield scrapy.Request(url=re_a, callback=self.company_information)
         if self.flag:
-            for i in range(2, 260):
-                if i == 259:
+            for i in range(2, 261):
+                if i == 260:
                     self.flag = False
                 yield scrapy.Request(url='http://111.11.196.111/aspx/corpinfo/CorpInfo.aspx?corpname=&cert=&PageIndex=%s' % i,
                                          callback=self.parse)
@@ -69,9 +69,15 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         licenseNum = Selector(response=response).xpath('//td[@id="corpcode"]/text()').extract_first()
         contactMan = Selector(response=response).xpath('//td[@id="linkman"]/text()').extract_first()
         address = Selector(response=response).xpath('//td[@id="address"]/text()').extract_first()
+        province = Selector(response=response).xpath('//td[@id="province"]/text()').extract_first()
+        if province != '西藏自治区':
+            data['companyArea'] = ''
+            data['area'] = '西藏自治区'
+        else:
+            data['area'] = ''
+            data['companyArea'] = '西藏自治区'
+
         data['companyName'] = company_name
-        data['area'] = ''
-        data['companyArea'] = '西藏自治区'
         data['token'] = self.token
         data['contactMan'] = contactMan
         data['contactAddress'] = address

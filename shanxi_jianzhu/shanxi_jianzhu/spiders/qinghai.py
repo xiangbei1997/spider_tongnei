@@ -41,7 +41,7 @@ class ShanxiJianzhuImformationSpider(scrapy.Spider):
         send_data['$reload'] = '0'
         send_data['$pgsz'] = '100'
         send_data['comp_zone'] = self.into
-        if not self.index == 91:
+        if not self.index == 92:
             send_data['$pg'] = str(self.index)
             yield scrapy.FormRequest(url=self.url,
                                      formdata=send_data,
